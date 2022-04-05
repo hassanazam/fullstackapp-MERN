@@ -8,8 +8,9 @@ passport.use(new GoogleAuthStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback'
-    }, (accessToken) => {
+    }, (accessToken, profile) => {
         console.log(accessToken);
+        console.log('Profile', profile);
     })
 );
 
